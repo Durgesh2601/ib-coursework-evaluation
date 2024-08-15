@@ -4,6 +4,8 @@ import CourseworkList from "@/components/ui/CourseworkList";
 import FileUpload from "@/components/ui/FileUpload";
 import Header from "@/components/ui/Header";
 import Tabs from "@/components/ui/Tabs";
+import HomePageImg from "@/assets/img1.svg";
+import Image from "next/image";
 
 export default function Home() {
   const myCourseworkItems = [
@@ -28,12 +30,25 @@ export default function Home() {
     <main className="flex">
       <Sidebar />
       <main className="flex-1 p-4 lg:p-8 bg-blue-50 min-h-screen">
-        <Header />
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
-          <FileUpload />
-          <CourseworkForm />
-        </section>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-8">
+          {/* First Column: Header and CourseworkForm */}
+          <div>
+            <Header />
+            <CourseworkForm />
+          </div>
+          {/* Second Column: Image */}
+          <div className="flex items-end justify-center">
+            <Image
+              src={HomePageImg}
+              alt="Coursework Image"
+              width={290}
+              height={528}
+            />
+          </div>
+        </div>
+
         <CourseworkList title="My coursework" items={myCourseworkItems} />
+
         <section className="mt-6 lg:mt-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">
             Explore coursework

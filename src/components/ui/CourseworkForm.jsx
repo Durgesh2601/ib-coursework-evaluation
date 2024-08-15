@@ -1,6 +1,9 @@
+import FileUpload from "./FileUpload";
+
 export default function CourseworkForm() {
   return (
     <form className="bg-white p-8 rounded-lg shadow-lg mt-8 space-y-6">
+      <FileUpload />
       <div>
         <label className="block text-gray-700 mb-2">Coursework Type</label>
         <select className="w-full p-3 border rounded-lg">
