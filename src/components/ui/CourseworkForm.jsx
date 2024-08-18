@@ -26,11 +26,6 @@ export default function CourseworkForm() {
         onSubmit={form.handleSubmit(onSubmit)}
         className="bg-white p-8 rounded-3xl shadow-lg mt-8 space-y-6 border border-light-border"
       >
-        {/* <FormField
-          control={form.control}
-          name="file"
-          render={() => <FileUpload />}
-        /> */}
         <FileUpload />
         <div>
           <FormLabel className="block text-gray-700 mb-2">
@@ -42,7 +37,7 @@ export default function CourseworkForm() {
               name="coursework_type"
               render={({ field }) => (
                 <FormItem>
-                  <Select>
+                  <Select onValueChange={field.onChange}>
                     <SelectTrigger className="w-full p-3 border rounded-lg">
                       <SelectValue placeholder="Select Coursework Type" />
                     </SelectTrigger>
@@ -60,7 +55,7 @@ export default function CourseworkForm() {
               name="subject"
               render={({ field }) => (
                 <FormItem>
-                  <Select>
+                  <Select onValueChange={field.onChange}>
                     <SelectTrigger className="w-full p-3 border rounded-lg">
                       <SelectValue placeholder="Select Subject" />
                     </SelectTrigger>
@@ -77,7 +72,7 @@ export default function CourseworkForm() {
         </div>
         <FormField
           control={form.control}
-          name="subject"
+          name="essay_title"
           render={({ field }) => (
             <FormItem>
               <FormLabel className="block text-gray-700 mb-2">
