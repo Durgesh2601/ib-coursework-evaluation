@@ -12,6 +12,7 @@ import { useForm } from "react-hook-form";
 import { Form, FormField, FormItem, FormLabel } from "./form";
 import { Input } from "./input";
 import { Button } from "./button";
+import { SELECT_FIELDS } from "@/constants";
 
 export default function CourseworkForm() {
   const form = useForm();
@@ -32,42 +33,35 @@ export default function CourseworkForm() {
             Select your course & subjects
           </FormLabel>
           <div className="flex space-x-4">
-            <FormField
-              control={form.control}
-              name="coursework_type"
-              render={({ field }) => (
-                <FormItem>
-                  <Select onValueChange={field.onChange}>
-                    <SelectTrigger className="w-full p-3 border rounded-lg">
-                      <SelectValue placeholder="Select Coursework Type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="ia">IA Example</SelectItem>
-                      <SelectItem value="ee">EE Example</SelectItem>
-                      <SelectItem value="io">IO Example</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="subject"
-              render={({ field }) => (
-                <FormItem>
-                  <Select onValueChange={field.onChange}>
-                    <SelectTrigger className="w-full p-3 border rounded-lg">
-                      <SelectValue placeholder="Select Subject" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="physics">Physics</SelectItem>
-                      <SelectItem value="chemistry">Chemistry</SelectItem>
-                      <SelectItem value="mathematics">Mathematics</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </FormItem>
-              )}
-            />
+            {Object.keys(SELECT_FIELDS).map((fieldKey) => (
+              <FormField
+                key={fieldKey}
+                control={form.control}
+                name={fieldKey}
+                render={({ field }) => (
+                  <FormItem>
+                    <Select onValueChange={field.onChange}>
+                      <SelectTrigger className="w-full p-3 border rounded-lg">
+                        <SelectValue
+                          placeholder={
+                            SELECT_FIELDS[fieldKey]?.placeholder || "Select"
+                          }
+                        />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {SELECT_FIELDS[fieldKey]?.options?.map(
+                          ({ value, label }) => (
+                            <SelectItem key={value} value={value}>
+                              {label}
+                            </SelectItem>
+                          )
+                        )}
+                      </SelectContent>
+                    </Select>
+                  </FormItem>
+                )}
+              />
+            ))}
           </div>
         </div>
         <FormField
@@ -82,6 +76,7 @@ export default function CourseworkForm() {
                 className="w-full p-3 border rounded-lg"
                 placeholder="Enter your essay title"
                 {...field}
+                onChange={field.onChange}
               />
             </FormItem>
           )}
