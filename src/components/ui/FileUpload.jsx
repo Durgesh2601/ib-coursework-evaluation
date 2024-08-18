@@ -1,30 +1,34 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import FileUploadImg from "@/assets/upload_file.svg";
 import { Button } from "./button";
+import { ACCEPTED_FILE_TYPES, MAX_FILE_SIZE } from "@/constants";
 
-const FileUpload = () => {
-  const [files, setFiles] = useState([]);
-
+const FileUpload = ({ setFile }) => {
   useEffect(() => {
     const storedFiles = JSON.parse(localStorage.getItem("uploadedFiles"));
     if (!storedFiles) return;
-    setFiles(storedFiles);
-  }, []);
+    setFile(storedFiles);
+  }, [setFile]);
 
   const onDrop = (acceptedFiles) => {
     const validFiles = acceptedFiles.filter(
-      (file) => file.size <= 25 * 1024 * 1024
+      (file) =>
+        file.size <= MAX_FILE_SIZE * 1024 * 1024 &&
+        ACCEPTED_FILE_TYPES.includes(file.type)
     ); // 25 MB limit
-    const updatedFiles = [...files, ...validFiles];
-    setFiles(updatedFiles);
-    localStorage.setItem("uploadedFiles", JSON.stringify(updatedFiles));
+    setFile(validFiles);
   };
 
-  const { getRootProps, getInputProps } = useDropzone({ onDrop });
+  const { getRootProps, getInputProps } = useDropzone({
+    onDrop,
+    accept: {
+      [ACCEPTED_FILE_TYPES.join(",")]: [],
+    },
+  });
 
   return (
     <div
@@ -40,13 +44,6 @@ const FileUpload = () => {
       <div className="mt-5">
         <Button variant="primary">Upload your file</Button>
       </div>
-      <ul className="mt-4 space-y-2">
-        {files.map((file, index) => (
-          <li key={index} className="text-gray-800">
-            {file.name}
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };

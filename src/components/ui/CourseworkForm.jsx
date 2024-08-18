@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import FileUpload from "./FileUpload";
 import {
   Select,
@@ -17,6 +18,7 @@ import ButtonIcon from "@/assets/btn_icon.svg";
 import Image from "next/image";
 
 export default function CourseworkForm() {
+  const [file, setFile] = useState({});
   const form = useForm();
 
   const onSubmit = (values) => {
@@ -27,9 +29,9 @@ export default function CourseworkForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="bg-white p-8 rounded-3xl shadow-lg mt-8 space-y-6 border border-light-border"
+        className="bg-light-bg p-8 rounded-3xl shadow-lg mt-8 space-y-6 border border-light-border"
       >
-        <FileUpload />
+        <FileUpload setFile={setFile} />
         <div>
           <FormLabel className="block text-secondary-text mb-2">
             Select your course & subjects

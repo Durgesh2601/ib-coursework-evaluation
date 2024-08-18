@@ -29,7 +29,7 @@ export default function Home() {
     <main className="flex">
       <Sidebar />
       <main className="flex-1 p-4 lg:p-8 bg-blue-50 min-h-screen">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-8">
+        <div className="px-2 grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-8">
           {/* First Column: Header and CourseworkForm */}
           <div className="lg:col-span-2 ">
             <Header />

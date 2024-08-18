@@ -35,6 +35,10 @@ module.exports = {
         "light-pink": "#CEC4EB",
         "light-border": "#D6DFE4",
         "secondary-text": "#7A8196",
+        "light-bg": "#FCFBFDB8"
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
       },
     },
   },

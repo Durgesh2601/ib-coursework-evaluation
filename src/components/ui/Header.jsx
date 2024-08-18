@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="text-center my-12">
+    <header className="my-12">
       <h1 className="text-4xl font-bold text-gray-800 mb-4">
         Hey IB Folks! Unsure about the quality of your answers?{" "}
         <span className="text-indigo-600">We get you.</span>

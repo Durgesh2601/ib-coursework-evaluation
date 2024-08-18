@@ -53,3 +53,5 @@ export const SELECT_FIELDS = {
     ],
   },
 };
+export const ACCEPTED_FILE_TYPES = ["application/pdf"];
+export const MAX_FILE_SIZE = 25; // 25MB for now
