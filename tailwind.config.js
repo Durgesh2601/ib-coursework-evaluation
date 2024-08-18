@@ -33,6 +33,7 @@ module.exports = {
       },
       colors: {
         "light-pink": "#CEC4EB",
+        "light-border": "#D6DFE4"
       },
     },
   },

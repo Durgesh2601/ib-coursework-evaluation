@@ -1,7 +1,6 @@
 import Sidebar from "@/components/Sidebar";
 import CourseworkForm from "@/components/ui/CourseworkForm";
 import CourseworkList from "@/components/ui/CourseworkList";
-import FileUpload from "@/components/ui/FileUpload";
 import Header from "@/components/ui/Header";
 import Tabs from "@/components/ui/Tabs";
 import HomePageImg from "@/assets/img1.svg";
@@ -30,9 +29,9 @@ export default function Home() {
     <main className="flex">
       <Sidebar />
       <main className="flex-1 p-4 lg:p-8 bg-blue-50 min-h-screen">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-8">
           {/* First Column: Header and CourseworkForm */}
-          <div>
+          <div className="lg:col-span-2 ">
             <Header />
             <CourseworkForm />
           </div>
