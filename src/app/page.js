@@ -36,7 +36,7 @@ export default function Home() {
             <CourseworkForm />
           </div>
           {/* Second Column: Image */}
-          <div className="flex items-end justify-center">
+          <div className="hidden lg:flex items-end justify-center">
             <Image
               src={HomePageImg}
               alt="Coursework Image"
