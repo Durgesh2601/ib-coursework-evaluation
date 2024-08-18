@@ -43,6 +43,7 @@ export default function CourseworkForm() {
       ...values,
       file,
       id: uuidv4(),
+      words_count: Math.floor(Math.random() * 100),
     };
     storedData.push(newEntry);
     localStorage.setItem("uploadedFiles", JSON.stringify(storedData));
