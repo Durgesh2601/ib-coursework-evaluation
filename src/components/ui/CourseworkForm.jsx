@@ -13,6 +13,8 @@ import { Form, FormField, FormItem, FormLabel } from "./form";
 import { Input } from "./input";
 import { Button } from "./button";
 import { SELECT_FIELDS } from "@/constants";
+import ButtonIcon from "@/assets/btn_icon.svg";
+import Image from "next/image";
 
 export default function CourseworkForm() {
   const form = useForm();
@@ -29,7 +31,7 @@ export default function CourseworkForm() {
       >
         <FileUpload />
         <div>
-          <FormLabel className="block text-gray-700 mb-2">
+          <FormLabel className="block text-secondary-text mb-2">
             Select your course & subjects
           </FormLabel>
           <div className="flex space-x-4">
@@ -69,7 +71,7 @@ export default function CourseworkForm() {
           name="essay_title"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="block text-gray-700 mb-2">
+              <FormLabel className="block text-secondary-text mb-2">
                 Enter your essay title*
               </FormLabel>
               <Input
@@ -81,7 +83,10 @@ export default function CourseworkForm() {
             </FormItem>
           )}
         />
-        <Button variant="outline">Evaluate your Score</Button>
+        <Button variant="outline" className="rounded-2xl pl-2" size="lg">
+          <Image src={ButtonIcon} alt="button-Icon" className="mx-2" />
+          Evaluate your Score
+        </Button>
       </form>
     </Form>
   );
