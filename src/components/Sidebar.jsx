@@ -1,4 +1,6 @@
 "use client";
+import { SIDEBAR_MENU_ITEMS } from "@/constants";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { FaHome, FaClipboardList, FaUser } from "react-icons/fa";
 import { HiMenu } from "react-icons/hi";
@@ -37,24 +39,15 @@ export default function Sidebar() {
           <h1 className="text-2xl font-bold">ZuAI</h1>
         </div>
         <nav className="flex-1 p-4 space-y-4">
-          <a
-            href="#"
-            className="flex items-center p-2 rounded-lg hover:bg-indigo-500"
-          >
-            <FaHome className="mr-3" /> Home
-          </a>
-          <a
-            href="#"
-            className="flex items-center p-2 rounded-lg hover:bg-indigo-500"
-          >
-            <FaClipboardList className="mr-3" /> Coursework
-          </a>
-          <a
-            href="#"
-            className="flex items-center p-2 rounded-lg hover:bg-indigo-500"
-          >
-            <FaUser className="mr-3" /> Profile
-          </a>
+          {SIDEBAR_MENU_ITEMS.map(({ id, icon, link }) => (
+            <Link
+              key={id}
+              href={link}
+              className="flex items-center p-2 rounded-lg hover:bg-indigo-500"
+            >
+              {icon}
+            </Link>
+          ))}
         </nav>
       </aside>
     </div>
