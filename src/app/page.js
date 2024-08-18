@@ -5,23 +5,17 @@ import Header from "@/components/ui/Header";
 import Tabs from "@/components/ui/Tabs";
 import HomePageImg from "@/assets/img1.svg";
 import Image from "next/image";
+import { COURSEWORK_ITEMS } from "@/constants";
 
 export default function Home() {
-  const myCourseworkItems = [
-    {
-      title: "How does the temperature of a Copper...",
-      description: "Physics | IA Example | 388 words",
-    },
-  ];
-
   const exploreTabs = [
     {
       label: "IA Example",
-      content: <CourseworkList items={myCourseworkItems} />,
+      content: <CourseworkList items={COURSEWORK_ITEMS} />,
     },
     {
       label: "EE Example",
-      content: <CourseworkList items={myCourseworkItems} />,
+      content: <CourseworkList items={COURSEWORK_ITEMS} />,
     },
   ];
 
@@ -46,10 +40,10 @@ export default function Home() {
           </div>
         </div>
 
-        <CourseworkList title="My coursework" items={myCourseworkItems} />
+        <CourseworkList title="My coursework" items={COURSEWORK_ITEMS} />
 
         <section className="mt-6 lg:mt-12">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">
+          <h2 className="text-2xl font-bold text-secondary-text mb-4">
             Explore coursework
           </h2>
           <Tabs tabs={exploreTabs} />

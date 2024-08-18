@@ -66,7 +66,6 @@ export default function CourseworkForm() {
     );
     setShowEvaluation(true);
   };
-
   return (
     <>
       {showEvaluation ? (
@@ -87,7 +86,7 @@ export default function CourseworkForm() {
               name="file"
               render={() => (
                 <FormItem>
-                  <FileUpload setFile={setFile} />
+                  <FileUpload file={file} setFile={setFile} />
                   <FormMessage>
                     {form.formState.errors.file?.message}
                   </FormMessage>
