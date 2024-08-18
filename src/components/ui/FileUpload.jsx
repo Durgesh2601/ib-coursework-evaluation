@@ -8,6 +8,7 @@ import { Button } from "./button";
 import { ACCEPTED_FILE_TYPES, MAX_FILE_SIZE } from "@/constants";
 
 const FileUpload = ({ setFile }) => {
+
   useEffect(() => {
     const storedFiles = JSON.parse(localStorage.getItem("uploadedFiles"));
     if (!storedFiles) return;
