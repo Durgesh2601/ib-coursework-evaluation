@@ -1,4 +1,4 @@
-````markdown
+```markdown
 # Coursework Evaluation Web App
 
 This is a web application for evaluating International Baccalaureate (IB) coursework. The application allows users to upload their coursework, select the type and subject, and get an evaluation of their score.
@@ -14,6 +14,7 @@ You can access the live application at: [https://ib-coursework-evaluation-chi.ve
 - [Implemented Features](#implemented-features)
 - [Bonus Points](#bonus-points)
 - [Challenges Faced](#challenges-faced)
+- [Conclusion](#conclusion)
 
 ## Setup Instructions
 
@@ -23,16 +24,13 @@ To get the project up and running locally, follow these steps:
    ```bash
    git clone https://github.com/Durgesh2601/ib-coursework-evaluation.git
    ```
-````
 
 2. **Install the dependencies**:
-
    ```bash
    npm install
    ```
 
 3. **Run the development server**:
-
    ```bash
    npm run dev
    ```
@@ -51,24 +49,20 @@ To get the project up and running locally, follow these steps:
 ## Implemented Features
 
 1. **File Upload with Validation**:
-
    - Users can upload files with a maximum size of 25MB.
    - Only PDF files are accepted.
    - The uploaded files are stored locally using Local Storage.
 
 2. **Coursework Details Form**:
-
    - Dropdowns for "Coursework Type" and "Subject" with predefined options.
    - Text input for entering the essay title.
    - Form validation to ensure all fields are required.
 
 3. **Tabbed Interface for Coursework Categories**:
-
    - A tabbed interface to switch between different coursework types (e.g., IA Example, EE Example, IO Example).
    - Each tab displays a list of coursework examples.
 
 4. **Evaluation Display**:
-
    - Displays an overall score with a circular progress indicator.
    - Shows a breakdown of scores by criteria (A, B, C).
    - Includes the evaluation date.
@@ -85,12 +79,10 @@ To get the project up and running locally, follow these steps:
 ## Challenges Faced
 
 - **Next.js 14**:
-
-  - This was my first time creating an application in Next.js 14. I encountered challenges related to routing, the new app directory structure.
+  - This was my first time creating an application in Next.js 14. I encountered challenges related to routing and the new app directory structure.
   - Overcame these challenges by thoroughly going through the [Next.js documentation](https://nextjs.org/docs) and experimenting with different setups.
 
 - **Responsive Design**:
-
   - Ensuring that the application was fully responsive across all screen sizes required careful consideration of the layout, particularly with the sidebar and image placement.
 
 - **State Management**:
@@ -99,4 +91,3 @@ To get the project up and running locally, follow these steps:
 ## Conclusion
 
 This project has been a great learning experience, especially with the use of Next.js 14, Zustand, and Shadcn UI components. The application is now fully functional, responsive, and meets all the specified requirements.
-```
