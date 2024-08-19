@@ -112,7 +112,7 @@ export default function CourseworkForm() {
                     render={({ field }) => (
                       <FormItem>
                         <Select onValueChange={field.onChange}>
-                          <SelectTrigger className="w-64 p-3 border rounded-lg">
+                          <SelectTrigger className="max-w-full p-3 border rounded-lg">
                             <SelectValue
                               placeholder={
                                 SELECT_FIELDS[fieldKey]?.placeholder || "Select"

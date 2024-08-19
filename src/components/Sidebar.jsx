@@ -31,7 +31,7 @@ export default function Sidebar() {
       </div>
       <aside
         ref={sidebarRef}
-        className={`w-15 fixed lg:relative z-10 transition-transform transform ${
+        className={`w-15 bg-white fixed lg:relative z-10 transition-transform transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } lg:translate-x-0 lg:block h-full right-0`}
       >
