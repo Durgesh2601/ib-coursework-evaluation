@@ -99,3 +99,4 @@ To get the project up and running locally, follow these steps:
 ## Conclusion
 
 This project has been a great learning experience, especially with the use of Next.js 14, Zustand, and Shadcn UI components. The application is now fully functional, responsive, and meets all the specified requirements.
+```
