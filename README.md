@@ -1,4 +1,3 @@
-```markdown
 # Coursework Evaluation Web App
 
 This is a web application for evaluating International Baccalaureate (IB) coursework. The application allows users to upload their coursework, select the type and subject, and get an evaluation of their score.
