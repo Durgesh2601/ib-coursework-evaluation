@@ -25,7 +25,7 @@ export default function Sidebar() {
   }, [isOpen]);
 
   return (
-    <div>
+    <div className="bg-white">
       <div className="lg:hidden p-4 absolute top-0 right-0">
         <HiMenu onClick={() => setIsOpen(!isOpen)} className="text-3xl" />
       </div>

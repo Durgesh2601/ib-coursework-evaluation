@@ -1,3 +1,4 @@
+import CourseworkList from "@/components/ui/CourseworkList";
 import { FaClipboardList, FaHome, FaUser } from "react-icons/fa";
 
 export const SIDEBAR_MENU_ITEMS = [
@@ -9,7 +10,7 @@ export const SIDEBAR_MENU_ITEMS = [
   {
     id: 2,
     icon: <FaClipboardList className="mr-3" />,
-    link: "/courseworks",
+    link: "/coursework",
   },
   {
     id: 3,
@@ -62,3 +63,13 @@ export const COURSEWORK_ITEMS = [
     type: "ia",
   },
 ];
+export const EXPLORE_TABS = [
+    {
+      label: "IA Example",
+      content: <CourseworkList items={COURSEWORK_ITEMS} />,
+    },
+    {
+      label: "EE Example",
+      content: <CourseworkList items={COURSEWORK_ITEMS} />,
+    },
+  ];
