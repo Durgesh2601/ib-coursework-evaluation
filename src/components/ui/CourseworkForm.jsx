@@ -112,23 +112,29 @@ export default function CourseworkForm() {
                     render={({ field }) => (
                       <FormItem>
                         <Select onValueChange={field.onChange}>
-                          <SelectTrigger className="w-full p-3 border rounded-lg">
+                          <SelectTrigger className="w-64 p-3 border rounded-lg">
                             <SelectValue
                               placeholder={
                                 SELECT_FIELDS[fieldKey]?.placeholder || "Select"
                               }
+                              className="whitespace-normal"
                             />
                           </SelectTrigger>
-                          <SelectContent>
+                          <SelectContent className="w-64">
                             {SELECT_FIELDS[fieldKey]?.options?.map(
                               ({ value, label }) => (
-                                <SelectItem key={value} value={value}>
+                                <SelectItem
+                                  key={value}
+                                  value={value}
+                                  className="whitespace-normal"
+                                >
                                   {label}
                                 </SelectItem>
                               )
                             )}
                           </SelectContent>
                         </Select>
+
                         <FormMessage>
                           {form.formState.errors[fieldKey]?.message}
                         </FormMessage>
