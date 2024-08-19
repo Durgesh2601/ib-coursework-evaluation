@@ -32,11 +32,10 @@ export default function CourseworkList({
               </div>
               {/* Second Column: Text Content */}
               <div className="w-2/3 pl-4">
-                <h3 className="text-lg font-semibold text-gray-800">
+                <h3 className="text-lg font-semibold text-gray-800 break-words">
                   {item.title}
                 </h3>
-                <p className="text-gray-600">{item.description}</p>
-                {/* Add other details here if needed */}
+                <p className="text-gray-600 mt-1">{item.description}</p>
               </div>
             </div>
           ))}

@@ -49,7 +49,9 @@ const FileUpload = ({ file, setFile }) => {
       <p className="text-lg text-gray-500">Drag and drop a PDF  </p>
       <p className="text-xs text-gray-500">*Limit 25 MB per file.</p>
       <div className="mt-5">
-        <Button variant="primary">Upload your file</Button>
+        <Button variant="primary" onClick={(event) => event.preventDefault()}>
+          Upload your file
+        </Button>
       </div>
       {file?.name && (
         <div className="flex justify-center gap-2 items-center mt-4 space-y-2">
