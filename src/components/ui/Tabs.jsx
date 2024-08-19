@@ -1,8 +1,8 @@
-"use client"
-import { useState } from "react";
+"use client";
+import { useTabsStore } from "@/app/store/useStore";
 
 export default function Tabs({ tabs }) {
-  const [activeTab, setActiveTab] = useState(tabs[0].label);
+  const { activeTab, setActiveTab } = useTabsStore();
 
   return (
     <div>

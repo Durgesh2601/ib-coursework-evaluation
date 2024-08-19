@@ -18,10 +18,12 @@ import { SELECT_FIELDS } from "@/constants";
 import ButtonIcon from "@/assets/btn_icon.svg";
 import Image from "next/image";
 import EvaluationDisplay from "../EvaluationDisplay";
+import { useRefetchStoredData } from "@/app/store/useStore";
 
 export default function CourseworkForm() {
   const [file, setFile] = useState(null);
   const [showEvaluation, setShowEvaluation] = useState(false);
+  const { refetch, setRefetch } = useRefetchStoredData();
   const form = useForm({
     defaultValues: {
       essay_title: "",
@@ -66,6 +68,7 @@ export default function CourseworkForm() {
       JSON.stringify(evaluationResults)
     );
     setShowEvaluation(true);
+    setRefetch(!refetch);
   };
   return (
     <>
